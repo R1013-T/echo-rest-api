@@ -1,0 +1,73 @@
+# Get Csrf Token
+GET http://localhost:8080/csrf
+
+###
+
+# Sign Up
+POST http://localhost:8080/signup
+content-type: application/json
+
+{
+  "email": "user1@test.com",
+  "password": "password"
+}
+
+###
+
+# Login
+POST http://localhost:8080/login
+content-type: application/json
+X-CSRF-TOKEN: OrGep3LaTeDXIGVgUgjYtm3SWvGyIEN4
+
+{
+  "email": "user1@test.com",
+  "password": "password"
+}
+
+###
+
+#Logout
+POST http://localhost:8080/logout
+content-type: application/json
+
+{
+  "email": "user1@test.com",
+  "password": "password"
+}
+
+###
+
+# GetAllTasks
+GET http://localhost:8080/tasks
+
+###
+
+# GetTask
+GET http://localhost:8080/tasks/1
+
+###
+
+# CreateTask
+POST http://localhost:8080/tasks
+content-type: application/json
+X-CSRF-TOKEN: OrGep3LaTeDXIGVgUgjYtm3SWvGyIEN4
+
+{
+  "title": "Task 4"
+}
+
+###
+
+# UpdateTask
+PUT http://localhost:8080/tasks/3
+content-type: application/json
+
+{
+  "title": "Task 3"
+}
+
+###
+
+# DeleteTask
+DELETE http://localhost:8080/tasks/4
+content-type: application/json
